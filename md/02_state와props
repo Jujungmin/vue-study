@@ -141,7 +141,10 @@ Box.vue에 추가해보자.
 
 
 
-
 ---
 ### Reference
 [[Vue.js] Props](https://velog.io/@dev-hoon/Vue.js-Props)
+
+
+props 자세한 설명내용
+https://goodmemory.tistory.com/145
