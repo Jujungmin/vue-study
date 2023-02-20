@@ -1,52 +1,58 @@
 <template>
-	<div>
-		<input v-model="title"/>
-		<h1>{{ title }}</h1>
-	</div>
-	<h2>웹툰</h2>
-	<div>
-		<input type="checkbox" id="프롬스타" value="프롬스타" v-model="checkedWebtoons"/>
-		<label for="프롬스타">프롬스타</label>
-		<input type="checkbox" id="햄스터와그녀" value="햄스터와 그녀" v-model="checkedWebtoons"/>
-		<label for="햄스터와그녀">햄스터와 그녀</label>
-		<input type="checkbox" id="위대한로맨스" value="위대한 로맨스" v-model="checkedWebtoons"/>
-		<label for="위대한로맨스">위대한 로맨스</label>
-		<input type="checkbox" id="아귀" value="아귀" v-model="checkedWebtoons"/>
-		<label for="아귀">아귀</label>
+	<div id="wrap">
+		{{ message }}
+		<h2>뒤집힌message</h2>
+		<!-- {{ message.split('').reverse().join('') }} -->
+		{{ reversedMessage }}
+		<!-- reversedMessage() -> (X) :: 함수라고 만들어놨지만 리턴되는 값을 뷰가 알아서 data처럼 들고 있는 것. -->
+		<!-- {{ reversedMessage2() }} -->
 		<br/>
-		<span>찜한 웹툰: {{ checkedWebtoons }}</span>
+		<input v-model="firstname"/>
+		<input v-model="lastname"/>
+
+		<h2>full name</h2>
+		<span>{{ fullname }}</span>
 	</div>
-
-	<h2> 성별</h2>
-	<input type="radio" id="male" value="남성" v-model="gender"/>
-	<label for="male">남</label>
-	<input type="radio" id="female" value="여성" v-model="gender"/>
-	<label for="female">여</label>
-	<br/>
-	<span>당신의 성별을 알려주세요: {{ gender }}</span>
-
-	<h2>선호 장르</h2>
-	<select v-model="category">
-		<option disabled value>선택해주세요.</option>
-		<option>로맨스</option>
-		<option>호러</option>
-		<option>스릴러</option>
-	</select>
-	<span>선택: {{ category }}</span>
 </template>
 
 <script>
-
 export default {
+	name: 'wrap',
 	data() {
 		return {
-			title: '',
-			checkedWebtoons: [],
-			gender: '',
-			category: '',
+			message: 'Hello Vue!!',
+			firstname: '',
+			lastname: '',
+			// fullname: '',
+		}
+	},
+	computed: {
+		reversedMessage() {
+			// console.log('computed');
+			return this.message.split('').reverse().join('');
+		}
+	},
+	methods: {
+		reversedMessage2() {
+			// console.log('methods');
+			// input의 값이 바뀔때마다 methods가 호출된다.
+			return this.message.split('').reverse().join('');
+		}
+	},
+	// watch: {
+	// 	firstname(val) {
+	// 		this.fullname = `${val} ${this.lastname}`;
+	// 	},
+	// 	lastname(val) {
+	// 		// console.log('lastname', val);
+	// 		this.fullname = `${this.firstname} ${val}`;
+	// 	}
+	// },
+	computed: {
+		fullname() {
+			return `${this.firstname} ${this.lastname}`;
 		}
 	}
-	
 }
 </script>
 
