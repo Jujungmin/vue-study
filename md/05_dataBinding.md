@@ -1,7 +1,7 @@
 # Data Binding
 ## 양방향 데이터(Two way binding)바인딩
 - 단방향 데이터 바인딩
-  - Webtton.vue의 `v-for`를 이용하여 리스트를 렌더링하면서 name, img, link 등등의 요소를 컴포넌트에서 표시하였다.<br/>양쪽(vue인스턴스와 component)에서 접근하는 것이 아닌 vue인스턴스 값을 component에게 준것 뿐이기 때문에 이는 단방향데이터 바인딩이다. 
+  - Webtoon.vue의 `v-for`를 이용하여 리스트를 렌더링하면서 name, img, link 등등의 요소를 컴포넌트에서 표시하였다.<br/>양쪽(vue인스턴스와 component)에서 접근하는 것이 아닌 vue인스턴스 값을 component에게 준것 뿐이기 때문에 이는 단방향데이터 바인딩이다. 
 - 양방향 데이터 바인딩
   - vue 인스턴스와 component가 서로의 데이터에 접근하는 것을 말한다.
 
